@@ -9,7 +9,8 @@ namespace CSP.Pages
         {
             Policies = new List<string>()
             {
-                "upgrade-insecure-requests"
+                "upgrade-insecure-requests",
+                "block-all-mixed-content"
             };
         }
     }

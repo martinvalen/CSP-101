@@ -14,6 +14,7 @@ namespace CSP.Pages
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",
+                "block-all-mixed-content",
                 "default-src 'self'",
                 "img-src *",
                 "script-src 'self' 'sha256-cV528yMJHA/kQgf9P6Fk2CaXr+LYxNZWtGju6quh8Pw='"
