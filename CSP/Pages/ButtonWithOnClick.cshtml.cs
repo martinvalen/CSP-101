@@ -12,8 +12,8 @@ namespace CSP.Pages
                 "upgrade-insecure-requests",
                 "default-src 'self'",
                 "img-src *",
-                "script-src 'self'",
-                "form-action 'self' https://placeyouwanttosendformsto.com"
+                "script-src 'self' https://ajax.aspnetcdn.com",
+                "require-sri-for script style",
             };
         }
     }

@@ -1,0 +1,21 @@
+﻿@page
+@model ScriptSrcOthersModel
+
+<h3>Content-Security-Policy</h3>
+<ul>
+    @foreach (var policy in Model.Policies)
+    {
+    <li>@policy</li>
+    }
+</ul>
+
+
+<script>alert("Someone managed to sneak malicious code into the page through an inline script!");</script>
+
+<pre>
+&lt;script src="~/js/site.js"&gt;&lt;/script&gt;
+&lt;script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"&lt;/script&gt;
+&lt;script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"&lt;/script&gt;
+</pre>
+
+<script src="/js/change-color.js"></script>

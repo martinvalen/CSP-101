@@ -22,6 +22,12 @@
     <Content Update="Pages\FormActionSelf.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\RequireSri.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Pages\ScriptSrcOthers.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\NoMoreInline.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

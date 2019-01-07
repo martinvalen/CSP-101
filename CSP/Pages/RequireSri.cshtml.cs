@@ -6,9 +6,9 @@ using CSP.Models;
 
 namespace CSP.Pages
 {
-    public class FormActionModel : CspModel
+    public class RequireSriModel : CspModel
     {
-        public FormActionModel(): base()
+        public RequireSriModel(): base()
         {
             Policies = new List<string>()
             {
@@ -16,8 +16,7 @@ namespace CSP.Pages
                 "default-src 'self'",
                 "img-src *",
                 "script-src 'self' https://ajax.aspnetcdn.com",
-                "require-sri-for script style",
-                "form-action 'self' https://placeyouwanttosendformsto.com"
+                "require-sri-for script style"
             };
         }
     }

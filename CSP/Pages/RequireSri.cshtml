@@ -1,0 +1,25 @@
+﻿@page
+@model RequireSriModel
+
+<h3>Content-Security-Policy</h3>
+<ul>
+    @foreach (var policy in Model.Policies)
+    {
+    <li>@policy</li>
+    }
+</ul>
+
+
+<script>alert("Someone managed to sneak malicious code into the page through an inline script!");</script>
+
+<pre>
+&lt;script src="~/js/site.js"&gt;&lt;/script&gt;
+&lt;script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"&gt;
+&lt;/script&gt;
+&lt;script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"&gt;
+&lt;/script&gt;
+</pre>
+
+<script src="/js/change-color.js"></script>
