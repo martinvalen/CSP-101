@@ -17,7 +17,7 @@ namespace CSP.Pages
                 "img-src *",
                 "script-src 'self' https://ajax.aspnetcdn.com",
                 "require-sri-for script style",
-                "form-action 'self' https://placeyouwanttosendformsto.com"
+                "form-action 'self'"
             };
         }
     }
