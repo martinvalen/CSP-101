@@ -12,6 +12,8 @@ namespace CSP.Pages
                 "upgrade-insecure-requests",
                 "block-all-mixed-content",
                 "default-src 'self'",
+                "script-src 'self' https://ajax.aspnetcdn.com",
+                "style-src 'self' https://ajax.aspnetcdn.com",
                 "img-src *"
             };
         }
