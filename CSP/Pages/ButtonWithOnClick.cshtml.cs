@@ -14,6 +14,7 @@ namespace CSP.Pages
                 "default-src 'self'",
                 "img-src *",
                 "script-src 'self' https://ajax.aspnetcdn.com",
+                "font-src 'self' https://ajax.aspnetcdn.com",
                 "style-src 'self' https://ajax.aspnetcdn.com",
                 "require-sri-for script style",
             };
