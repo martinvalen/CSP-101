@@ -7,6 +7,8 @@ namespace CSP.Pages
     {
         public ButtonWithOnClickModel(): base()
         {
+            NextUrl = "/ButtonWithEventListener";
+            NextName = "Button with event listener";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",

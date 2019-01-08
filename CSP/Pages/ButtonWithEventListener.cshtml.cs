@@ -7,6 +7,8 @@ namespace CSP.Pages
     {
         public ButtonWithEventListenerModel(): base()
         {
+            NextUrl = "/FormActionSelf";
+            NextName = "Form action";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",

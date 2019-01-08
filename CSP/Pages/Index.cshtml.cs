@@ -7,6 +7,8 @@ namespace CSP.Pages
     {
         public IndexModel() : base()
         {
+            NextUrl = "/UpgradeInsecureRequests";
+            NextName = "Upgrade Insecure Requests";
             Policies = new List<string>()
             {
             };

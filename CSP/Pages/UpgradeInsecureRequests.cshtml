@@ -1,20 +1,21 @@
 ﻿@page
 @model UpgradeInsecureRequestsModel
 
-<h3>Content-Security-Policy</h3>
-<ul>
-    @foreach (var policy in Model.Policies)
-    {
-        <li>@policy</li>
-    }
-</ul>
+@{
+    Layout = "Shared/_CspLayout";
+}
 
+@section Explanation
+{
+    
+}
 
+@section ScriptSection
+{
+    <script>
+        window.onload = function (e) {
+            document.getElementById("should-be-red").style.backgroundColor = "red";
+        };
+    </script>
+}
 
-@*<script>alert("Someone managed to sneak malicious code into the page through an inline script!");</script>*@
-
-<script>
-    window.onload = function (e) {
-        document.getElementById("should-be-red").style.backgroundColor = "red";
-    };
-</script>

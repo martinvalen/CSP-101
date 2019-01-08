@@ -9,6 +9,8 @@ namespace CSP.Models
     public class CspModel : PageModel
     {
         public IEnumerable<string> Policies { get; set; }
+        public string NextUrl { get; set; }
+        public string NextName { get; set; }
 
         public void OnGet()
         {

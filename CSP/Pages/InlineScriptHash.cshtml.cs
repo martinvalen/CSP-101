@@ -8,6 +8,8 @@ namespace CSP.Pages
 
         public InlineScriptHashModel(): base()
         {
+            NextUrl = "/NoMoreInline";
+            NextName = "Remove inline script";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",

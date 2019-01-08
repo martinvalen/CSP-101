@@ -11,6 +11,8 @@ namespace CSP.Pages
 
         public InlineScriptNonceModel(): base()
         {
+            NextUrl = "/InlineScriptHash";
+            NextName = "Script Hash";
             ScriptNonce = GetUniqueKey(100);
             Policies = new List<string>()
             {

@@ -7,6 +7,8 @@ namespace CSP.Pages
     {
         public MaliciousInlineScriptModel() : base()
         {
+            NextUrl = "/DefaultSrcSelf";
+            NextName = "Default-src 'self'";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",

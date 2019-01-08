@@ -1,21 +1,20 @@
 ﻿@page
 @model InlineScriptNonceModel
 
-<h3>Content-Security-Policy</h3>
-<ul>
-    @foreach (var policy in Model.Policies)
-    {
-    <li>@policy</li>
-    }
-</ul>
+@{
+    Layout = "Shared/_CspLayout";
+}
 
-<pre>
+
+@section Explanation
+{
+    <pre>
 &lt;script nonce="@Model.ScriptNonce"&gt;
     changeColorToRed();
 &lt;/script&gt;
 </pre>
 
-<pre>
+    <pre>
 model.ScriptNonce = GetUniqueKey(100);
 
 private static string GetUniqueKey(int size)
@@ -35,11 +34,15 @@ private static string GetUniqueKey(int size)
     return result.ToString();
 }
 </pre>
+}
 
-<script>alert("Someone managed to sneak malicious code into the page through an inline script!");</script>
+@section ScriptSection
+{
+    <script>alert("Someone managed to sneak malicious code into the page through an inline script!");</script>
 
-<script nonce="@Model.ScriptNonce">
-    window.onload = function (e) {
-        document.getElementById("should-be-red").style.backgroundColor = "red";
-    };
-</script>
+    <script nonce="@Model.ScriptNonce">
+        window.onload = function (e) {
+            document.getElementById("should-be-red").style.backgroundColor = "red";
+        };
+    </script>
+}

@@ -7,6 +7,8 @@ namespace CSP.Pages
     {
         public InlineScriptModel(): base()
         {
+            NextUrl = "/RequireSri";
+            NextName = "Require Src";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",

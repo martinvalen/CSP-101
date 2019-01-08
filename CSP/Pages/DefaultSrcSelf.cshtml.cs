@@ -7,6 +7,8 @@ namespace CSP.Pages
     {
         public DefaultSrcSelfModel(): base()
         {
+            NextUrl = "/ScriptSrcOthers";
+            NextName = "Script-src";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",

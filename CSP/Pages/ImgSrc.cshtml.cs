@@ -7,6 +7,8 @@ namespace CSP.Pages
     {
         public ImgSrcModel(): base()
         {
+            NextUrl = "/InlineScriptNonce";
+            NextName = "Script nonce";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",

@@ -1,15 +1,14 @@
 ﻿@page
 @model ButtonWithEventListenerModel
 
-<h3>Content-Security-Policy</h3>
-<ul>
-    @foreach (var policy in Model.Policies)
-    {
-        <li>@policy</li>
-    }
-</ul>
+@{
+    Layout = "Shared/_CspLayout";
+}
 
 <input type="button" class="btn" id="clickmebutton" value="Click me!" />
+
+@section Explanation
+{
 <pre>&lt;input type="button" id="clickmebutton" value="Click me!"/&gt;
 &lt;script src="/js/click-me-button.js"&gt;&lt;/script&gt;
 </pre>
@@ -23,7 +22,12 @@ function doStuffOnClick() {
     alert('Button clicked!');
 }</pre>
 
-<script>alert("Someone managed to sneak malicious code into the page through an inline script!");</script>
+}
 
-<script src="/js/change-color.js"></script>
-<script src="/js/click-me-button.js"></script>
+
+@section ScriptSection {
+    <script>alert("Someone managed to sneak malicious code into the page through an inline script!");</script>
+
+    <script src="/js/change-color.js"></script>
+    <script src="/js/click-me-button.js"></script>
+}

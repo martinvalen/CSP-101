@@ -7,6 +7,8 @@ namespace CSP.Pages
     {
         public RequireSriModel(): base()
         {
+            NextUrl = "/ButtonWithOnClick";
+            NextName = "On click event";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",

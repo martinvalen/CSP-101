@@ -21,7 +21,7 @@
                 <a asp-page="/Index" class="navbar-brand">CSP</a>
             </div>
             <div class="navbar-collapse collapse">
-                
+                @RenderSection("NextButton", false)
             </div>
         </div>
     </nav>
@@ -30,40 +30,11 @@
 
 <div class="container body-content">
     <div class="row">
-        <div class="col-md-9">
-            <div>
-                @RenderBody()
-            </div>
-            <img src="http://sau.no/sau.jpg" alt="This is a picture of a sheep, loaded over http." />
-
-            <div class="pink-box" id="should-be-red">
-                It is really important to change the background color of this element to red with an inline script.
-            </div>
-
-            <form method="POST">
-                <input type="submit" title="Refresh page" value="Refresh page" />
-            </form>
-
-            <form action="https://bnfoieoernoriefewfwefwef.cew/vye78wohvlweiuve" method="POST">
-                <input type="submit" title="Post to some unidentified page" value="Post to some unidentified page" />
-            </form>
+        <div class="col-md-6">
+            @RenderBody()
         </div>
-        <div class="col-md-3">
-            <ol class="sidebar">
-                <li><a asp-page="/Index">No CSP</a></li>
-                <li><a asp-page="/UpgradeInsecureRequests">upgrade-insecure-requests</a></li>
-                <li><a asp-page="/MaliciousInlineScript">HACKED!</a></li>
-                <li><a asp-page="/DefaultSrcSelf">default-src self</a></li>
-                <li><a asp-page="/ScriptSrcOthers">Script and style src</a></li>
-                <li><a asp-page="/ImgSrc">img-src *</a></li>
-                <li><a asp-page="/InlineScriptNonce">Script nonce</a></li>
-                <li><a asp-page="/InlineScriptHash">Script hash</a></li>
-                <li><a asp-page="/NoMoreInline">No inline script</a></li>
-                <li><a asp-page="/RequireSri">Require Sri</a></li>
-                <li><a asp-page="/ButtonWithOnClick">On click-event</a></li>
-                <li><a asp-page="/ButtonWithEventListener">Event-listener</a></li>
-                <li><a asp-page="/FormActionSelf">Form action</a></li>
-            </ol>
+        <div class="col-md-6">
+            @RenderSection("Explanation", false)
         </div>
     </div>
 </div>

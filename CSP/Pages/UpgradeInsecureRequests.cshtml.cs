@@ -7,6 +7,8 @@ namespace CSP.Pages
     {
         public UpgradeInsecureRequestsModel() : base()
         {
+            NextUrl = "/MaliciousInlineScript";
+            NextName = "Someone hacked me!";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",
