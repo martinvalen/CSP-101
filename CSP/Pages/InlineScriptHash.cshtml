@@ -7,7 +7,18 @@
 
 @section Explanation
 {
+    The desired script:
+<pre>&lt;script&gt;
+    window.onload = function (e) {
+        document.getElementById("should-be-red").style.backgroundColor = "red";
+    };
+&lt;/script&gt;</pre>
+    Hashes to <pre>sha256-qL0GhB31v2oq6tRU266JAEGQV24FAiw9Bt2LTyhpPiY=</pre>
     
+    While the unwanted script:
+    <pre>&lt;script&gt;alert("Someone managed to sneak malicious code into the page through an inline script!");&lt;/script&gt;</pre>
+    Hashes to <pre>sha256-7H0z+ms+3WAiuutnM1ijx41hxcYdgXGnSrSR12qpzyU=</pre>
+
 }
 
 @section ScriptSection

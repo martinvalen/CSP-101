@@ -16,7 +16,7 @@ namespace CSP.Pages
                 "block-all-mixed-content",
                 "default-src 'self'",
                 "img-src *",
-                "script-src 'self' https://ajax.aspnetcdn.com 'sha256-cV528yMJHA/kQgf9P6Fk2CaXr+LYxNZWtGju6quh8Pw='",
+                "script-src 'self' https://ajax.aspnetcdn.com 'sha256-qL0GhB31v2oq6tRU266JAEGQV24FAiw9Bt2LTyhpPiY='",
                 "font-src 'self' https://ajax.aspnetcdn.com",
                 "style-src 'self' https://ajax.aspnetcdn.com",
             };
