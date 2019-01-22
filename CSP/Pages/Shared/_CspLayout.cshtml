@@ -48,6 +48,8 @@ else
 {
     @if (!string.IsNullOrEmpty(Model.NextUrl))
     {
-        <a class="btn" href="@Model.NextUrl">@Model.NextName</a>
+    <div class="btn">
+        <a class="btn btn-primary" href="@Model.NextUrl">@Model.NextName</a>
+    </div>
     }
 }

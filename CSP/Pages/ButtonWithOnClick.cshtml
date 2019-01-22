@@ -8,6 +8,10 @@
 <input type="button" class="btn" onclick="alert('button clicked!');" value="Click me!" />
 
 @section Explanation
-    {
+{
     <pre>&lt;input type="button" onclick="alert('button clicked!');" value="Click me!"/&gt;</pre>
+
+    <div>
+        If script-src doesn't contain 'unsafe-inline', on-click-events and similar are also disallowed.
+    </div>
 }
