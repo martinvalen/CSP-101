@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using CSP.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace CSP.Pages
 {
-    public class FormActionModel : CspModel
+    public class ReportUriModel : CspModel
     {
-        public FormActionModel(): base()
+        public ReportUriModel() : base()
         {
-            NextUrl = "/ReportUri";
-            NextName = "Reporting violations";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",
@@ -19,7 +19,8 @@ namespace CSP.Pages
                 "font-src 'self' https://ajax.aspnetcdn.com",
                 "style-src 'self' https://ajax.aspnetcdn.com",
                 "require-sri-for script style",
-                "form-action 'self'"
+                "form-action 'self'",
+                "report-uri /cspReport"
             };
         }
     }

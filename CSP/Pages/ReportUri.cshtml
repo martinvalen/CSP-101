@@ -1,0 +1,30 @@
+﻿@page
+@model ReportUriModel
+
+@{
+    Layout = "Shared/_CspLayout";
+}
+
+@section Explanation
+{
+    <h4>CSP violation report</h4>
+    When a policy is violated, a CSP-report is POSTed to the Report-URI.
+<pre>
+{
+    "csp-report":
+    {
+        "document-uri":"https://localhost:44308/reporturi",
+        "referrer":"",
+        "violated-directive":"script-src-elem",
+        "effective-directive":"script-src-elem",
+        "original-policy":"upgrade-insecure-requests;block-all-mixed-content;default-src 'self';img-src *;script-src 'self' https://ajax.aspnetcdn.com;font-src 'self' https://ajax.aspnetcdn.com;style-src 'self' https://ajax.aspnetcdn.com;require-sri-for script style;form-action 'self';report-uri /cspReport",
+        "disposition":"enforce",
+        "blocked-uri":"inline",
+        "line-number":71,
+        "source-file":"https://localhost:44308/reporturi",
+        "status-code":0,
+        "script-sample":""
+    }
+}
+</pre>
+}
