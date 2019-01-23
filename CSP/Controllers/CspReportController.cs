@@ -13,13 +13,6 @@ namespace CSP.Controllers
         {
             _logger = logger;
         }
-
-        // GET
-        public IActionResult Index()
-        {
-            return
-            View();
-        }
         
         [HttpPost("")]
         public IActionResult CspReport([FromBody] CspReportRequest cspReport)
