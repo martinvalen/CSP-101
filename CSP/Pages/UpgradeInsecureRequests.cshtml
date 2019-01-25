@@ -8,10 +8,11 @@
 @section Explanation
 {
     <h4>Upgrade-insecure-requests</h4>
-    Makes all attempts to load http into https. Falls back to http if https doesn't exist.
+    Makes all attempts to load http into https. Fails to load if https-version doesn't exist.
     
     <h4>Block-all-mixed-content</h4>
     Blocks content loaded over http.
+    I had this header initially, but it is not recommended to use both this and upgrade-insecure-requests. Upgrade-insecure-requests runs first, making block-all-mixed-content a no-op.
 }
 
 @section ScriptSection

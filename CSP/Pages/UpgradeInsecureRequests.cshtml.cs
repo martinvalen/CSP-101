@@ -11,8 +11,7 @@ namespace CSP.Pages
             NextName = "Someone hacked me!";
             Policies = new List<string>()
             {
-                "upgrade-insecure-requests",
-                "block-all-mixed-content"
+                "upgrade-insecure-requests"
             };
         }
     }
