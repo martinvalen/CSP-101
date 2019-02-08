@@ -58,6 +58,7 @@ Specifies valid sources that can be loaded using the following interfaces:
 - `XMLHttpRequest`
 - `WebSocket`
 - `EventSource`
+
 Falls back to `default-src` if not specified.
 
 #### font-src
