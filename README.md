@@ -36,5 +36,57 @@ There are many different sources you may restrict sources from, and they all use
 
 `*` - Allows everything.
 
-`https://www.example.com` - Allows everything from www.example.com. You may also use wildcards: `https://*.example.com` allows all subdomains of example.com. `https://www.example.com:443` allows only 443-port of www.example.com.
+`'none'` - Allows no sources.
+
+`https://www.example.com` - Allows everything from www.example.com. You may also use wildcards or port specification. `https://*.example.com` allows all subdomains of example.com. `https://www.example.com:443` allows only 443-port of www.example.com.
+
+`'unsafe-inline'` - Allows inline sources, suchs as `<script>js</script>` or `<style>css</style>`.
+
+`'unsafe-eval'` - Allows the use of `eval()` and other methods which creates runnable code from strings.
+
+`'nonce-<somerandomvalue>'` - Allows all elements with `nonce=<somerandomvalue>` to bypass the other CSP-rules. It is important that the nonce is recalculated in a cryptographically secure way on every reload. If the nonce is guessable, attackers will be able to bypass all your other CSPs.
+
+`sha256-<base64value>` - Allows scripts or styles that hash to certain base64-values to be run.
+
+### Different sources to be restricted
+
+#### connect-src
+Specifies valid sources that can be loaded using the following interfaces:
+- `<a>`
+- `ping`
+- `Fetch`
+- `XMLHttpRequest`
+- `WebSocket`
+- `EventSource`
+Falls back to `default-src` if not specified.
+
+#### font-src
+Specifies valid sources from where one may load fonts. Falls back to `default-src` if not specified.
+
+#### frame-src
+Whitelists sources for nested content, such as `iframe` and `frame`. Falls back to `default-src` if not specified.
+
+#### img-src
+Specifies valid sources for images and favicons. Falls back to `default-src` if not specified.
+
+#### manifest-src
+Specifies which manifest (for Progressive Web Apps) may be applied to the resource. Falls back to `default-src` if not specified.
+
+#### media-src
+Specifies valid sources for `<audio>` and `<video>`-elements. Falls back to `default-src` if not specified.
+
+#### object-src
+Specifies valid sources for `<object>`, `<embed>`, `<applet>`-elements. Falls back to `default-src` if not specified.
+
+#### script-src
+Specifies valid sources from where `<script>`-tags may load scripts. This also includes inline event handlers such as `onclick` and XSLT-stylesheets. Falls back to `default-src` if not specified.
+
+#### style-src
+Specifies valid sources from where `<style>`-tags may load styles. This also includes inline styles. Falls back to `default-src` if not specified.
+
+#### worker-src
+Specifies valid sources for `Worker`, `ServiceWorker`, and `SharedWorker`-scripts. Falls back to `script-src` which again falls back to `default-src` if not specified.
+
+#### form-actions
+Specifies valid sources for forms to submit to. *Does not fall back to anything, which means that all form-actions are allowed if this is not set.*
 
