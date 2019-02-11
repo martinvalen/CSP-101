@@ -24,6 +24,14 @@ Upgrade insecure requests will attempt to load all http-requests over https. If 
 
 Blocks all content from being loaded over http. Not necessary if upgrade-insecure-request is on.
 
+### Require subresource integrity
+
+`require-sri-for script styles`
+
+Forces scripts and or styles to be loaded with a hash, blocking them if the content loaded doesn't hash to the same value.
+`<script src="www.example.com/example.min.js" integrity="sha256-[base64]"></script>`
+
+
 ### Setting sources
 
 `[xxx]-src 'self' https: http://some.url.com`
@@ -90,4 +98,37 @@ Specifies valid sources for `Worker`, `ServiceWorker`, and `SharedWorker`-script
 
 #### form-actions
 Specifies valid sources for forms to submit to. *Does not fall back to anything, which means that all form-actions are allowed if this is not set.*
+
+#### frame-ancestors
+Specifies valid parents for the page, using `<frame>`, `<iframe>`, `<object>`, `<applet>` and `<embed>`-elements. This is similar to the HTTP-header `X-Frame-Options` and should be used in addition to it, as they have different browser support.
+
+## Report-Uri and Report-To
+
+*Report-uri and report-to work quite similar, but report-uri is deprecated and will not be supported in newer implementations of CSP. It is, however, the one that is by far the most supported as of February 2019, which means that you should implement both.*
+
+#### report-uri
+
+`report-uri /csp-report-endpoint` or `report-uri https://www.example.com/csp-report-endpoint`
+
+#### report-to
+
+```
+Report-To: 
+{ 
+    "group": "csp-endpoint",
+    "max-age": 10886400,
+    "endpoints": [
+        { "url": "https://example.com/csp-reports" },
+        { "url": "https://fallback-url.com/csp-reports" }
+    ] 
+},
+{ 
+    "group": "hpkp-endpoint",
+    "max-age": 10886400,
+    "endpoints": [
+        { "url": "https://example.com/hpkp-reports" }
+    ]
+}
+Content-Security-Policy: ...; report-to csp-endpoint
+```
 
