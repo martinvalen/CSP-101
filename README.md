@@ -53,6 +53,7 @@ There are many different sources you may restrict sources from, and they all use
 `'unsafe-eval'` - Allows the use of `eval()` and other methods which creates runnable code from strings.
 
 `'nonce-<somerandomvalue>'` - Allows all elements with `nonce=<somerandomvalue>` to bypass the other CSP-rules. It is important that the nonce is recalculated in a cryptographically secure way on every reload. If the nonce is guessable, attackers will be able to bypass all your other CSPs.
+There is an example implementation of how to create nonces in .NET Core.
 
 `sha256-<base64value>` - Allows scripts or styles that hash to certain base64-values to be run.
 
@@ -132,3 +133,23 @@ Report-To:
 Content-Security-Policy: ...; report-to csp-endpoint
 ```
 
+### How do they work?
+
+Both work the same way after the initial implementation. When some part of the policy is violated, the browser will post a json-object to the report-endpoint. The object contains the information needed to figure out which policy was violated and where it happened.
+
+If you wish to implement a handler for this yourself, you'll need to support the media-type *application/csp-report*.
+
+## Content-Security-Policy-Report-Only
+
+Use this instead of `Content-security-policy` if you wish to test your reports. This should also be used when deploying CSP to an existing site, in case the policy is too strict.
+
+## Going live with CSP
+
+If you are creating a new site, you should start out with a strict CSP and open it up when needed. Having a strict CSP to begin with will force you to write your app in a secure manner and will remove the need to have the app in report-only mode when going live.
+
+If you are implementing CSP in an existing site, it is recommended that you turn it on your test site and only use report-only mode on your production site. After a month of report-only, you should be ready to turn it on for the production site as well.
+
+
+## I had a talk about CSP at Knowit Experience Bergen (Norwegian)
+
+https://www.youtube.com/watch?v=aP6Iic6UucA&t=1s
