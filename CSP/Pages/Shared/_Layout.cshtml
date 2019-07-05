@@ -26,20 +26,22 @@
         </div>
     </nav>
 
-<div class="container body-content">
-    <div class="row">
-        <div class="col-md-4">
-            @RenderBody()
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Content Security Policy</h1>
+            </div>
         </div>
-        <div class="col-md-8">
-            @RenderSection("Explanation", false)
+        <div class="row">
+            <div class="col-md-4">
+                @RenderBody()
+            </div>
+            <div class="col-md-8">
+                @RenderSection("Explanation", false)
+            </div>
         </div>
     </div>
-</div>
 
-<div class="navbar navbar-fixed-bottom container">
-    <a href="https://github.com/martinvalen/CSP-101">https://github.com/martinvalen/CSP-101</a>
-</div>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
