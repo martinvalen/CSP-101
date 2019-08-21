@@ -20,7 +20,7 @@ namespace CSP.Pages
                 "block-all-mixed-content",
                 "default-src 'self'",
                 "img-src *",
-                "script-src 'self' https://ajax.aspnetcdn.com 'nonce-" + ScriptNonce + "'",
+                "script-src 'self' https://ajax.aspnetcdn.com 'nonce-" + ScriptNonce + "' 'unsafe-inline'",
                 "font-src 'self' https://ajax.aspnetcdn.com",
                 "style-src 'self' https://ajax.aspnetcdn.com"
             };
