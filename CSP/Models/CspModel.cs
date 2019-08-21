@@ -15,6 +15,8 @@ namespace CSP.Models
         public void OnGet()
         {
             Response.Headers.Add("Content-Security-Policy", Policies.Join(";"));
+            Response.Headers.Add("Report-To", "{'group':'default','max_age':31536000,'endpoints':[{'url':'https://cspmartinvalen.report-uri.com/a/d/g'}],'include_subdomains':false}");
+            Response.Headers.Add("NEL", "{'report_to':'default','max_age':31536000,'include_subdomains':false}");
         }
 
         public async Task<IActionResult> OnPostAsync()
