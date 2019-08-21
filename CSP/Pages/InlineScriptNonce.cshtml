@@ -14,31 +14,11 @@
 &lt;/script&gt;
 </pre>
 
-    <pre>
-model.ScriptNonce = GetUniqueKey(100);
-
-private static string GetUniqueKey(int size)
-{
-    var chars =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
-    var data = new byte[size];
-    using (var crypto = new RNGCryptoServiceProvider())
-    {
-        crypto.GetBytes(data);
-    }
-    var result = new StringBuilder(size);
-    foreach (var b in data)
-    {
-        result.Append(chars[b % (chars.Length)]);
-    }
-    return result.ToString();
-}
-</pre>
 }
 
 @section ScriptSection
 {
-    <script>alert("Someone managed to sneak malicious code into the page through an inline script!");</script>
+    <script>alert("I just stole your credit card info!");</script>
 
     <script nonce="@Model.ScriptNonce">
         window.onload = function (e) {
