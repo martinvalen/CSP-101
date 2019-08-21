@@ -5,12 +5,11 @@ using Microsoft.Extensions.Logging;
 
 namespace CSP.Pages
 {
-    public class ReportUriModel : CspModel
+    public class ReportOnlyModel : CspModel
     {
-        public ReportUriModel() : base()
+        public ReportOnlyModel() : base()
         {
-            NextUrl = "/ReportOnly";
-            NextName = "Report Only";
+            Policy = "Content-Security-Policy-Report-Only";
             Policies = new List<string>()
             {
                 "upgrade-insecure-requests",
