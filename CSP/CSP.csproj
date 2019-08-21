@@ -16,6 +16,9 @@
     <Content Update="Pages\ButtonWithOnClick.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\ReportWizard.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\ReportOnly.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

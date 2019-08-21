@@ -22,8 +22,7 @@ namespace CSP.Pages
                 "style-src 'self' https://ajax.aspnetcdn.com",
                 "require-sri-for script style",
                 "form-action 'self'",
-                "report-uri https://cspmartinvalen.report-uri.com/r/d/csp/enforce",
-                "report-to default"
+                "report-uri https://cspmartinvalen.report-uri.com/r/d/csp/enforce"
             };
         }
     }
