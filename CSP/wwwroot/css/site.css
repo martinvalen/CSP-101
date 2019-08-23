@@ -45,3 +45,7 @@ body {
     flex-direction: column;
     list-style: none;
 }
+
+.list-group-item {
+    word-break: break-word;
+}
