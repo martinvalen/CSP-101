@@ -47,8 +47,17 @@ else
 {
     @if (!string.IsNullOrEmpty(Model.NextUrl))
     {
-    <div class="btn">
-        <a class="btn btn-primary" href="@Model.NextUrl">@Model.NextName</a>
-    </div>
+        <div class="btn">
+            <a class="btn btn-primary" href="@Model.NextUrl">@Model.NextName</a>
+        </div>
     }
+}
+
+@section Header
+{
+    @if (Model.Policies.Any())
+    {
+        <h1>@Model.Policy</h1>
+    }
+
 }
