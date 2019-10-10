@@ -150,6 +150,6 @@ If you are creating a new site, you should start out with a strict CSP and open 
 If you are implementing CSP in an existing site, it is recommended that you turn it on your test site and only use report-only mode on your production site. After a month of report-only, you should be ready to turn it on for the production site as well.
 
 
-## I had a talk about CSP at Knowit Experience Bergen (Norwegian)
+## I had a talk about CSP at JavaZone 2019 (Norwegian)
 
-https://www.youtube.com/watch?v=aP6Iic6UucA&t=1s
+https://vimeo.com/363514581
